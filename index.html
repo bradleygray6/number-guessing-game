@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Number Guessing Game</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:white;padding:25px;text-align:center}
+main{max-width:500px;margin:40px auto;background:#1e293b;padding:30px;border-radius:18px}
+input{width:85%;padding:14px;margin:15px 0;border:0;border-radius:8px}
+button{background:#0284c7;color:white;padding:13px 20px;border:0;border-radius:8px;cursor:pointer;margin:5px}
+#message{font-size:23px;color:#38bdf8;margin:25px}
+</style>
+</head>
+<body>
+<main>
+<h1>Number Guessing Game</h1>
+<p>Guess the hidden number between 1 and 100.</p>
+<input id="guess" type="number" min="1" max="100" placeholder="Enter your guess">
+<br>
+<button id="check" onclick="checkGuess()">Submit Guess</button>
+<button onclick="reset()">New Game</button>
+<p id="message">Make your first guess!</p>
+<p id="attempts">Attempts: 0</p>
+</main>
+<script>
+let secret=Math.floor(Math.random()*100)+1;
+let attempts=0;
+function checkGuess(){
+ const guess=Number(document.getElementById("guess").value);
+ const message=document.getElementById("message");
+ if(guess<1||guess>100||!Number.isInteger(guess)){
+  message.textContent="Enter an integer between 1 and 100.";
+  return;
+ }
+ attempts++;
+ document.getElementById("attempts").textContent="Attempts: "+attempts;
+ if(guess===secret){
+  message.textContent="Congratulations! Correct guess!";
+  document.getElementById("check").disabled=true;
+ }else if(guess<secret){
+  message.textContent="Too low! Try again.";
+ }else{
+  message.textContent="Too high! Try again.";
+ }
+}
+function reset(){
+ secret=Math.floor(Math.random()*100)+1;
+ attempts=0;
+ document.getElementById("guess").value="";
+ document.getElementById("check").disabled=false;
+ document.getElementById("message").textContent="Make your first guess!";
+ document.getElementById("attempts").textContent="Attempts: 0";
+}
+</script>
+</body>
+</html>
