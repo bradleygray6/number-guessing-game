@@ -1,23 +1,23 @@
-# Number Guessing Game
+## Number Guessing Game Guide
 
-An interactive game for guessing a hidden number.
+This project provides an interactive
+number guessing experience.
 
-## Features
+### Game Features
 
-- Random hidden number
-- Higher and lower hints
+- Random target number
+- User guesses
+- Higher or lower hints
 - Attempt tracking
 
-## How to Use
+### How to Play
 
-Guess a number between 1 and 100.
+1. Start a new game.
+2. Enter a number within the allowed range.
+3. Follow the displayed hints.
+4. Continue until the correct number is found.
 
-## Technologies
+### Development Notes
 
-- HTML
-- CSS
-- JavaScript
-
-## Running Locally
-
-Open `index.html` in a modern web browser.
+Validate guesses and handle
+invalid numerical input appropriately.
