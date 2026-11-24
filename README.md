@@ -21,3 +21,12 @@ number guessing experience.
 
 Validate guesses and handle
 invalid numerical input appropriately.
+## Manual Testing Checklist
+
+- [ ] Start a game and enter a guess within range.
+- [ ] Check the higher and lower hints.
+- [ ] Start a new game and verify attempts reset.
+
+### Test Notes
+
+Record the observed result and any reproducible issue after running the tests.
